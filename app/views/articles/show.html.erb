@@ -1,0 +1,24 @@
+<header>
+  <h1>My Wiki</h1>
+  <%= link_to "Add a new article", new_article_path %>
+</header>
+
+
+<div class="content">
+  <div class="flexbox">
+    <%= link_to "Edit article", edit_article_path %>
+    <%= link_to "Delete article",
+              article_path(@article),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+  </div>
+
+  <h2>Title: <%= @article.title %></h2>
+  <div class="border">
+    <p><%= @article.content %></p>
+  </div>
+
+  <div class="text-align-right">
+    <%= link_to "Go back to Articles", articles_path%>
+  </div>
+</div>
